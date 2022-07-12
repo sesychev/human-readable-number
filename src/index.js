@@ -42,16 +42,16 @@ module.exports = function toReadable (number) {
 
 	function hundredsFunc (hundred) {
 		const third = Math.floor (hundred / 100);
-		const fourth = hundred % 100;
+		const dozen = hundred % 100;
 
-		if (fourth === 0) {
+		if (dozen === 0) {
 			return numbersFunc (third) + ' ' + hundreds;
 		}
-		else if (fourth <= 20) {
-			return numbersFunc (third) + ' ' + hundreds + ' ' + numbersFunc (fourth);
+		else if (dozen <= 20) {
+			return numbersFunc (third) + ' ' + hundreds + ' ' + numbersFunc (dozen);
 		}
 		else {
-			return numbersFunc (third) + ' ' + hundreds + ' ' + dozensFunc (fourth);
+			return numbersFunc (third) + ' ' + hundreds + ' ' + dozensFunc (dozen);
 		}
 	}
 
